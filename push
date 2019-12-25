@@ -11,5 +11,5 @@ read -p "the correct path number " num
 # find ./ -name $fname | awk "NR==$num {print $1}" | (read lpath) 
 read lpath <<< `find ./ -name $fname | awk "NR==$num {print $1}"`
 path=$RPATH"/"$lpath
-echo "MSYS_NO_PATHCONV=1 adb push $lpath $path "
-MSYS_NO_PATHCONV=1 adb push $lpath $path
+echo "adb push $lpath $path "
+adb push $lpath $path
