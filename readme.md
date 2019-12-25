@@ -5,11 +5,20 @@
 
 ```
 adb pull /sdcard/mydump/lua
-ls
-push.sh lua
 ```
 
-remote 路径就为/sdcard/mydump/
+脚本就放在lua同级目录
+
+```
+$ ls
+asd  lua/  push*  pwd/  readme.md
+```
+
+设置临时环境变量为pull路径少最后一个路径
+
+```
+export RPATH=/sdcard/mydump
+```
 
 ## 输入文件名
 
@@ -18,3 +27,26 @@ remote 路径就为/sdcard/mydump/
 ## 选择路径
 
 输入路径序号
+
+```
+macl02@macl02-5175 MINGW64 /f/workspace/adbshell (master)
+$ export RPATH=/sdcard/mydump/
+
+macl02@macl02-5175 MINGW64 /f/workspace/adbshell (master)
+$ ./push
+input the file name a.lua
+1 ./lua/a.lua 2 ./lua/unknown/a.lua
+the correct path number 1
+adb push ./lua/a.lua /sdcard/mydump//./lua/a.lua
+./lua/a.lua: 1 file pushed. 0.0 MB/s (15 bytes in 0.012s)
+
+```
+
+windows 用git bash 修改最后一行 前面加上
+
+```
+MSYS_NO_PATHCONV=1
+```
+
+
+
