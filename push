@@ -1,4 +1,8 @@
+#! /bin/sh
+if [ -z $RPATH ];
+then
 read -p "input the remote path " rpath
+fi
 #echo $rpath
 read -p "input the file name " fname
 #echo "filename "$fname
