@@ -1,15 +1,26 @@
-#! /bin/sh
+#! /bin/bash
 if [ -z $RPATH ];
 then
 read -p "input the remote path " RPATH
 fi
 #echo $rpath
+if [ -z $1 ];
+then 
 read -p "input the file name " fname
+else
+fname=$1
+fi
 #echo "filename "$fname
-echo `find . -name $fname | awk '{ print NR , $1 }' `
+find . -name $fname | awk '{ print NR  $1 }'
 read -p "the correct path number " num
 # find ./ -name $fname | awk "NR==$num {print $1}" | (read lpath) 
-read lpath <<< `find ./ -name $fname | awk "NR==$num {print $1}"`
-path=$RPATH"/"$lpath
-echo "adb push $lpath $path "
-adb push $lpath $path
+read lpath <<< ` find ./ -name $fname | awk "NR==$num "'{print $1}'  `
+echo $lpath
+if [ -z $lpath ];
+then
+echo "404 not found"
+else
+fpath=$RPATH"/"$lpath
+echo "adb push $lpath $fpath "
+adb push $lpath $fpath
+fi
