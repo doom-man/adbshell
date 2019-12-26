@@ -1,4 +1,11 @@
-# 使用手册
+# readme
+
+解决pull 代码以后 ,修改代码以后频繁去push 出错和修改路径
+
+效果图
+
+![wd](C:\Users\macl02\Desktop\wd.gif)
+
 ## remote 路径
 
 脚本路径与pull 的同级 , 例如
