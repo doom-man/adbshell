@@ -40,7 +40,13 @@ then
 echo "absolutional path"
 absolute $RPATH $1
 else
+<<<<<<< HEAD
 relative $RPATH $1
+=======
+fpath=$RPATH"/"$lpath
+echo "adb push $lpath $fpath "
+MSYS_NO_PATHCONV=1 adb push $lpath $fpath
+>>>>>>> cd47bca65b16c38acd64ce12332293c2ef30002e
 fi
 
 

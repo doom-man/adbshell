@@ -1,4 +1,12 @@
-# 使用手册
+# readme
+
+解决pull 代码以后 ,修改代码以后频繁去push 出错和修改路径
+
+效果图
+
+![](./res/wd.gif)]
+
+
 ## remote 路径
 
 脚本路径与pull 的同级 , 例如
@@ -42,7 +50,9 @@ adb push ./lua/a.lua /sdcard/mydump//./lua/a.lua
 
 ```
 
-windows 用git bash 修改最后一行 前面加上
+windows 用git bash 运行
+
+在adb push 前面加上
 
 ```
 MSYS_NO_PATHCONV=1
