@@ -1,26 +1,47 @@
 #! /bin/bash
+
+absolute(){
+file=` basename $1 `
+#echo $file
+cpath=${2#*${file}}
+fpath=$1$cpath
+#echo $fpath
+echo "adb push $2 $fpath"
+adb push $2 $fpath
+return 0
+}
+
+relative(){
+find . -name $2 | awk '{ print NR  $1 }'
+read -p "the correct path number " num
+read lpath <<< ` find ./ -name $2 | awk "NR==$num "'{print $1}'  `
+if [ -z $2 ];
+then
+echo "404 not found"
+else
+fpath=$1"/"$2
+echo "adb push $lpath $fpath "
+adb push $2 $fpath
+fi
+}
+
+
 if [ -z $RPATH ];
 then
 read -p "input the remote path " RPATH
 fi
-#echo $rpath
+
 if [ -z $1 ];
 then 
 read -p "input the file name " fname
-else
-fname=$1
-fi
-#echo "filename "$fname
-find . -name $fname | awk '{ print NR  $1 }'
-read -p "the correct path number " num
-# find ./ -name $fname | awk "NR==$num {print $1}" | (read lpath) 
-read lpath <<< ` find ./ -name $fname | awk "NR==$num "'{print $1}'  `
-echo $lpath
-if [ -z $lpath ];
+relative $RPATH $fname
+elif [[ $1 =~ "/" ]]; 
 then
-echo "404 not found"
+echo "absolutional path"
+absolute $RPATH $1
 else
-fpath=$RPATH"/"$lpath
-echo "adb push $lpath $fpath "
-adb push $lpath $fpath
+relative $RPATH $1
 fi
+
+
+
