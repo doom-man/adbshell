@@ -22,5 +22,5 @@ echo "404 not found"
 else
 fpath=$RPATH"/"$lpath
 echo "adb push $lpath $fpath "
-adb push $lpath $fpath
+MSYS_NO_PATHCONV=1 adb push $lpath $fpath
 fi

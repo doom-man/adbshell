@@ -4,7 +4,8 @@
 
 效果图
 
-![wd](C:\Users\macl02\Desktop\wd.gif)
+![](./res/wd.gif)]
+
 
 ## remote 路径
 
