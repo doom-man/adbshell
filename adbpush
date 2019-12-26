@@ -7,7 +7,7 @@ cpath=${2#*${file}}
 fpath=$1$cpath
 #echo $fpath
 echo "adb push $2 $fpath"
-MSYS_NO_PATHCONV=1 adb push $2 $fpath
+adb push $2 $fpath
 return 0
 }
 # $1 rpath $2 file
@@ -22,7 +22,7 @@ echo "404 not found"
 else
 fpath=`dirname $RPATH`/$lpath
 echo "adb push $lpath $fpath "
-MSYS_NO_PATHCONV=1 adb push $lpath $fpath
+adb push $lpath $fpath
 fi
 }
 
