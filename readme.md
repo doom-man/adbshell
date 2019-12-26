@@ -49,7 +49,9 @@ adb push ./lua/a.lua /sdcard/mydump//./lua/a.lua
 
 ```
 
-windows 用git bash 修改最后一行 前面加上
+windows 用git bash 运行
+
+在adb push 前面加上
 
 ```
 MSYS_NO_PATHCONV=1
