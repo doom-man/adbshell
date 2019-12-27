@@ -22,10 +22,10 @@ $ ls
 asd  lua/  push*  pwd/  readme.md
 ```
 
-设置临时环境变量为pull路径少最后一个路径
+设置临时环境变量为pull路径
 
 ```
-export RPATH=/sdcard/mydump
+export RPATH=/sdcard/mydump/lua
 ```
 
 ## 输入文件名
