@@ -2,9 +2,9 @@
 
 解决pull 代码以后 ,修改代码以后频繁去push 出错和修改路径
 
-效果图
 
-![](./res/wd.gif)
+
+![效果图](res/wd.gif)
 
 
 ## remote 路径
