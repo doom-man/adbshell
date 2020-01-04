@@ -37,10 +37,8 @@ export RPATH=/sdcard/mydump/lua
 输入路径序号
 
 ```
-macl02@macl02-5175 MINGW64 /f/workspace/adbshell (master)
 $ export RPATH=/sdcard/mydump/
 
-macl02@macl02-5175 MINGW64 /f/workspace/adbshell (master)
 $ ./push
 input the file name a.lua
 1 ./lua/a.lua 2 ./lua/unknown/a.lua
