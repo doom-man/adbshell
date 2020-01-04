@@ -4,7 +4,7 @@
 
 效果图
 
-![](./res/wd.gif)]
+![](./res/wd.gif)
 
 
 ## remote 路径
